@@ -75,6 +75,8 @@
 	
 	<h3>1. insert연습 (공지사항 등록)</h3>
 	<a href="${ contextPath }/regist.no">공지사항 등록페이지로 이동</a>
+	<%-- 링크는 Servlet 호출해서 포워딩 방식으로 적어야한다 --%>
+	<%-- 포워딩은 Controller의 doGet 메소드에서 적는다 --%>
 	
 	<h3>2. select연습 - 한행 (공지사항 상세조회)</h3>
 	<form action="${ contextPath }/detail.no">

@@ -17,14 +17,16 @@
 			
 		</select|insert|update|delete>
 		
-		* id : 해당 sql문의 식별자 (dao측에서 실행할 sql문을 탐색할때 사용됨)
+		
+		
+		* id : 해당 sql문의 식별자 (키값같은 존재. dao측에서 실행할 sql문을 탐색할때 사용됨)
 					 ex) mapper파일의namespace.sql문의id  제시해서 sql문 실행 
 		
 		* parameterType : 해당 sql문으로 전달되는 파라미터의 타입 (생략가능)
 					ex)
 							1) parameterType="com.br.mybatis.notice.dto.NoticeDto" - 풀클래스명을 기본적으로 써야됨
-							2) parameterType="NoticeDto"	- alias 등록했을 경우 
-							3) parameterType="_int"				- mybatis 내장 별칭
+							2) parameterType="NoticeDto"	- alias 등록했을 경우 (mybatis-config.xml 파일의 alias)
+							3) parameterType="_int"				- mybatis 내장 별칭 (sql문으로 int형으로 전달될 때)
 							4) parameterType="string"			- mybatis 내장 별칭
 							5) parameterType="map"				- mybatis 내장 별칭
 									....

@@ -10,8 +10,11 @@ import com.br.mybatis.notice.dto.NoticeDto;
 
 public class NoticeDao {
 	
-	public int insertNotice(SqlSession sqlSession, NoticeDto n) {
+	public int insertNotice(SqlSession sqlSession, NoticeDto n) { 
+		// n에는 Controller의 NoticeTitle, NoticeContent, NoticeWriter 필드에 insert할 데이터들이 담겨있다
+		// 이것들을 가지고 실행할 sql문은 notice-mapper.xml에 적어준다
 		return sqlSession.insert("noticeMapper.insertNotice", n);
+		// 여기서 n은 mapper 메소드부분에서 물음표부분을 완성시킬 때 필요한 noticeDto 객체 n을 넘겨주는것
 	}
 	
 	public int updateNotice(SqlSession sqlSession, NoticeDto n) {
