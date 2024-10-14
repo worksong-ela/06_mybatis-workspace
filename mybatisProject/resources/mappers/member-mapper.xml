@@ -41,8 +41,38 @@
 		 where user_no = #{userNo}
 	</update>
 	
+	<select id="selectSearchList" resultMap="memberResultMap">
+		select
+					 user_no
+				 , user_id
+				 , user_name
+				 , address
+		  from member
+		 where status in ('U', 'A')
+		  <choose>
+		  	<when test="condition == 'no'">
+		  	and user_no like '%' || #{keyword} || '%'		  	
+		  	</when>
+		  	<when test='condition == "name"'>
+		  	and user_name like '%' || #{keyword} || '%'	
+		  	</when>
+		  	<otherwise>
+		  	and user_id like '%${keyword}%'
+		  	</otherwise>
+		  </choose>
+	</select>
 	
-	
+	<update id="deleteMember">
+		update
+					 member
+			 set status = 'R'
+		<where>
+			<foreach item="no" collection="array"
+				open="user_no in (" separator="," close=")">
+					#{no}
+			</foreach>
+		</where>
+	</update>
 	
 	
 	

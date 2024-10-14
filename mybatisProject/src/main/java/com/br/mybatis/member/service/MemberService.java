@@ -12,6 +12,8 @@ public interface MemberService {
 	
 	// 회원 검색 
 	
+	// 회원 다중 탈퇴
+	int deleteMember(String[] deleteNo);
 	
 	
 }

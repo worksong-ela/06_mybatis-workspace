@@ -12,5 +12,17 @@ public class MemberDao {
 
 	public int updateMember(SqlSession sqlSession, MemberDto m) {
 		return sqlSession.update("memberMapper.updateMember", m);
+
 	}
+	
+	
+	
+	public int deleteMember(SqlSession sqlSession, String[] deleteNo) {
+		return sqlSession.update("memberMapper.deleteMember", deleteNo);
+		
+	}
+
+
+	
+	
 }

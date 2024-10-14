@@ -29,4 +29,15 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	@Override
+	public int deleteMember(String[] deleteNo) {
+		SqlSession sqlSession = getSqlSession();
+		int result = memberDao.deleteMember(sqlSession, deleteNo);
+		if(result == deleteNo.length) { // 처리된 행수가 deleteNo의 길이와 동일할 때 즉, 성공시
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+
 }
