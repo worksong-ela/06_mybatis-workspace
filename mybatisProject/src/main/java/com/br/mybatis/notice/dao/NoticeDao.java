@@ -27,7 +27,7 @@ public class NoticeDao {
 		// 즉, mappers에서 객체를 전달받아 뽑아서 ? 자리를 채워준다.
 	}
 	
-	public int deleteNotice(SqlSession sqlSession, int noticeNo) {
+	public int deleteNotice(SqlSession sqlSession, int noticeNo) { // 행수반환이니까 int // noticeNo == 글번호
 		return sqlSession.delete("noticeMapper.deleteNotice", noticeNo);
 	}
 	
