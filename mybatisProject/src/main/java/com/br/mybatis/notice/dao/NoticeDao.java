@@ -17,8 +17,14 @@ public class NoticeDao {
 		// 여기서 n은 mapper 메소드부분에서 물음표부분을 완성시킬 때 필요한 noticeDto 객체 n을 넘겨주는것
 	}
 	
-	public int updateNotice(SqlSession sqlSession, NoticeDto n) {
-		return sqlSession.update("noticeMapper.updateNotice", n);
+	
+	
+	public int updateNotice(SqlSession sqlSession, NoticeDto n) { // 공지사항을 찾기위한 글번호, 수정할 제목, 수정할 내용 등이 담긴 NoticeDto n
+		return sqlSession.update("noticeMapper.updateNotice", n); // 서비스측으로 return 하는 것
+		// mapper.xml에 있는 update문 실행하고싶으면 sqlSession 객체로부터 update 메소드 호출하면 됨.
+		// 메소드를 호출하면서 '어떤 매퍼파일의 어떤 아이디를 가진 sql문을 실행할건지' 제시하고, 
+		// sql문을 완성시킬 때 필요한 무언가(Dto 객체)를 전달할 것을 써준다. 이게 바로 () 안에 들어가는거다.
+		// 즉, mappers에서 객체를 전달받아 뽑아서 ? 자리를 채워준다.
 	}
 	
 	public int deleteNotice(SqlSession sqlSession, int noticeNo) {
