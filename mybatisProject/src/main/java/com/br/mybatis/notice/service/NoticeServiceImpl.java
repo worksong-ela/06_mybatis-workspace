@@ -28,8 +28,7 @@ public class NoticeServiceImpl implements NoticeService {
 		// mapper의 insert문이 실행되고, 처리된 행수가 NoticeDao로 갔고,
 		// 그게 return 되어서 여기 이 자리로 반환된거다.
 		
-		// Dao에서 반환된 행수 결과인 result의 결과 확인
-		if(result > 0) {
+		if(result > 0) { // Dao에서 반환된 행수 결과인 result의 결과 확인
 			sqlSession.commit();
 		}
 		
@@ -38,6 +37,8 @@ public class NoticeServiceImpl implements NoticeService {
 		return result;
 	}
 
+	
+	
 	@Override
 	public NoticeDto selectNotice(int noticeNo) {
 		
