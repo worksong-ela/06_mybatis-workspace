@@ -23,6 +23,7 @@ public class NoticeServiceImpl implements NoticeService {
 		// Template 클래스에 getSqlSession 메소드를 만들어뒀다.
 		// getSqlSession 메소드는 mybatis-config.xml 문서를 읽어들이면서 DB와 연결된다.
 		// Template. 을 생략하고 싶다면 import문에 static 적어주고 맨오른쪽에 .getSqlSession 적어준다.
+		// sqlSession 객체는 mybatis용 객체다. 이걸 가지고 쿼리 실행, 트랜젝션 처리, 클로즈처리 등을 한다
 		
 		int result = noticeDao.insertNotice(sqlSession, n); // n은 insert한 데이터들이 담긴 notice 객체
 		// mapper의 insert문이 실행되고, 처리된 행수가 NoticeDao로 갔고,

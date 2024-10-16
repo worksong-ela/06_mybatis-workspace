@@ -31,7 +31,7 @@ public class NoticeDao {
 		return sqlSession.delete("noticeMapper.deleteNotice", noticeNo);
 	}
 	
-	public NoticeDto selectNotice(SqlSession sqlSession, int noticeNo) {
+	public NoticeDto selectNotice(SqlSession sqlSession, int noticeNo) { // 조회된 결과들이 담겨있는 NoticeDto객체 반환하는 selectNotice 객체 만듦
 		return sqlSession.selectOne("noticeMapper.selectNotice", noticeNo);
 	}
 	

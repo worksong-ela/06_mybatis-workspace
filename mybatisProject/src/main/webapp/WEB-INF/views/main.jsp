@@ -80,7 +80,7 @@
 	
 	<h3>2. select연습 - 한행 (공지사항 상세조회)</h3>
 	<form action="${ contextPath }/detail.no">
-		검색할 글번호 : <input type="text" name="noticeNo">
+		검색할 글번호 : <input type="text" name="noticeNo"> <!-- 키값 부여해야 넘어가니까 name속성 쓰는 것 -->
 		<button type="submit">검색</button>
 	</form>
 	
